@@ -14,6 +14,7 @@
                         <div class=" mb-2">
                             <a class="btn btn-success" href="{{ route('students.create') }}"> Create Student</a>
                             <a class="btn btn-success" href="{{ route('view-students') }}"> View All Students</a>
+                            <a class="btn btn-success" href="{{ route('search-class') }}"> View Class</a>
                             <a class="btn btn-success" href="{{ route('search') }}"> Search Student</a>
                         </div>
                     </th>

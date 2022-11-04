@@ -34,6 +34,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center text-150">
+                            <div>
+                                <img src="{{ asset('/images/user.jpeg')}}" width="15%" height="55%" alt="">
+                            </div>
                             <i class="fa fa-book fa-2x text-success-m2 mr-1"></i>
                             <span class="text-default-d3"><input type="text" name="regNumber" id="" value="AIS Official Payment Receipt" disabled></span>
                          
@@ -57,7 +60,7 @@
                             <div class="my-1">
                                 Benue, Nigeria
                             </div>
-                            <div class="my-1"><i class="fa fa-phone fa-flip-horizontal text-secondary"></i> <b class="text-600">111-111-111</b></div>
+                            <div class="my-1"><i class="fa fa-phone fa-flip-horizontal text-secondary"></i> <b class="text-600">+234-8129158117</b></div>
                         </div>
                     </div>
                     <!-- /.col -->
@@ -85,7 +88,7 @@
                         <div class="col-9 col-sm-5">Description</div>
                         <div class="d-none d-sm-block col-4 col-sm-2">Term</div>
                         <div class="d-none d-sm-block col-sm-2">Status</div>
-                        <div class="col-2">Amount</div>
+                        <div class="col-2">Amount(NGN)</div>
                     </div>
 
                     <div class="text-95 text-secondary-d3">
@@ -98,7 +101,7 @@
                             <div class="d-none d-sm-block col-2 text-95">
                                 {{ $payment->first_term_fee }}
                             </div>
-                            <div class="col-2 text-secondary-d2">NGN {{ $payment->firstAmount }}</div>
+                            <div class="col-2 text-secondary-d2">{{ $payment->firstAmount }}</div>
                         </div>
 
                         <div class="row mb-2 mb-sm-0 py-25 bgc-default-l4">
@@ -110,7 +113,7 @@
                             <div class="d-none d-sm-block col-2 text-95">
                                 {{ $payment->second_term_fee }}
                             </div>
-                            <div class="col-2 text-secondary-d2">NGN {{ $payment->secondAmount }}</div>
+                            <div class="col-2 text-secondary-d2">{{ $payment->secondAmount }}</div>
                         </div>
 
                         <div class="row mb-2 mb-sm-0 py-25">
@@ -122,7 +125,7 @@
                             <div class="d-none d-sm-block col-2 text-95">
                                 {{ $payment->third_term_fee }}
                             </div>
-                            <div class="col-2 text-secondary-d2">NGN {{ $payment->thirdAmount }}</div>
+                            <div class="col-2 text-secondary-d2">{{ $payment->thirdAmount }}</div>
                         </div>
 
                         {{-- <div class="row mb-2 mb-sm-0 py-25 bgc-default-l4">
@@ -166,16 +169,16 @@
 
                     <div class="row mt-3">
                         <div class="col-12 col-sm-7 text-grey-d2 text-95 mt-2 mt-lg-0">
-                            Extra note such as company or payment information...
+                            
                         </div>
 
                         <div class="col-12 col-sm-5 text-grey text-90 order-first order-sm-last">
                             <div class="row my-2">
                                 <div class="col-7 text-right">
-                                    SubTotal
+                                    SubTotal NGN
                                 </div>
                                 <div class="col-5">
-                                    <span class="text-120 text-secondary-d1">NGN {{ floatVal($payment->firstAmount)+floatVal($payment->secondAmount)+floatVal($payment->thirdAmount) }}</span>
+                                    <span class="text-120 text-secondary-d1"> {{ floatVal($payment->firstAmount)+floatVal($payment->secondAmount)+floatVal($payment->thirdAmount) }}</span>
                                 </div>
                             </div>
 
@@ -190,10 +193,10 @@
 
                             <div class="row my-2 align-items-center bgc-primary-l3 p-2">
                                 <div class="col-7 text-right">
-                                    Total Amount
+                                    Total NGN 
                                 </div>
                                 <div class="col-5">
-                                    <span class="text-150 text-success-d3 opacity-2">NGN {{ floatVal($payment->firstAmount)+floatVal($payment->secondAmount)+floatVal($payment->thirdAmount) }}</span>
+                                    <span class="text-150 text-success-d3 opacity-2">{{ floatVal($payment->firstAmount)+floatVal($payment->secondAmount)+floatVal($payment->thirdAmount) }}</span>
                                 </div>
                             </div>
                         </div>

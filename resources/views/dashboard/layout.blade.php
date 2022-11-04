@@ -61,7 +61,7 @@
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="" alt="AIS" class="dark-logo" />
+                            <img src="{{ asset('/images/user.jpeg')}}" width="50" height="50"   alt="AIS" class="dark-logo" />
                             <!-- Light Logo icon -->
                             <img src="{{ asset('/images/user.jpeg')}}" alt="Dashboard" class="light-logo" />
                         </b>
@@ -70,7 +70,7 @@
                             <!-- dark Logo text -->
                             <img src="" alt="MS" class="dark-logo" />
                             <!-- Light Logo text -->
-                            <img src="{{ asset('/images/user.jpeg')}}" class="light-logo" alt="MS" /></span>
+                            <img src="" class="light-logo" alt="MS" /></span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -156,7 +156,7 @@
                         <li> <a class="waves-effect waves-dark" href="{{route('register_user')}}" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Register User</span></a>
                         </li>
-                        {
+                        
                     </ul>
                     <div class="text-center mt-4">
                         <a href=" {{'dashboard'}}"

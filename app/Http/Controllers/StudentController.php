@@ -98,6 +98,11 @@ class StudentController extends Controller
         return view('students.search-student');
     }
 
+    public function searchClass(Student $student)
+    {
+        return view('students.searchClass');
+    }
+
     public function showStudent(Request $request, Student $student)
     {
         if (Student::where('regNumber', $request->searchData)->exists()) {
@@ -114,6 +119,22 @@ class StudentController extends Controller
 
         return redirect()->back();
         
+    }
+
+    public function viewClass(Request $request, Student $student)
+    {
+        $bclasss = Student::where('sclass', $request->searchData)->exists();
+        
+
+        if ($bclasss) {
+            $sclasss = Student::where('sclass', $request->searchData)->first();
+            $students = Student::all()->where('sclass', $request->searchData);
+            return view('students.view-class', compact('students'), compact('sclasss'));
+        }else {
+            Session::flash('message', 'No student in this class.');
+        }
+
+        return redirect()->back();
     }
     
 

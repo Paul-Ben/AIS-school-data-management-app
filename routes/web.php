@@ -40,6 +40,8 @@ Route::get('addPayment', [PaymentController::class, 'showStudent'])->name('addPa
 Route::get('search', [StudentController::class, 'searchStudent'])->name('search');
 Route::get('view', [StudentController::class, 'showStudent'])->name('view');
 Route::get('view-students', [StudentController::class, 'viewStudent'])->name('view-students');
+Route::get('search-class', [StudentController::class, 'searchClass'])->name('search-class');
+Route::get('view-class', [StudentController::class, 'viewClass'])->name('view-class');
 Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 Route::get('inregister', [RegisteredUserController::class, 'icreate'])->name('register_user');
 Route::post('register-user', [RegisteredUserController::class, 'istore'])->name('register-user');

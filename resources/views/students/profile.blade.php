@@ -29,6 +29,7 @@
               <h3 class="mb-0"><i class="fa fa-clone pr-1"></i>General Information</h3>
             </div>
             <div class="card-body pt-0">
+              
               <table class="table table-bordered">
                 <tr>
                   <th width="30%">Nationality</th>
@@ -55,6 +56,20 @@
                   <td width="2%">:</td>
                   <td>{{ $student->allergies }}</td>
                 </tr>
+                <tr>
+                  <th width="30%">Edit/Delete Details</th>
+                  <td width="2%">:</td>
+                  <td>
+                    <form action="{{ route('students.destroy',$student->id) }}" method="Post"> 
+                      <a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Edit</a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                  
+                  </td>
+                </tr>
+                
               </table>
             </div>
           </div>
