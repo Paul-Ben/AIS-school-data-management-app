@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\FeeController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ResultController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\Pay;
@@ -48,6 +49,9 @@ Route::post('register-user', [RegisteredUserController::class, 'istore'])->name(
 Route::resource('receipts', RecieptController::class);
 Route::get('receipt', [RecieptController::class, 'showReciept'])->name('receipt');
 
+Route::resource('results', ResultController::class);
+Route::get('get-student', [ResultController::class, 'testme'])->name('get-student');
+Route::get('testsearch', [ResultController::class, 'testsearch'])->name('testsearch');
 
 });
 

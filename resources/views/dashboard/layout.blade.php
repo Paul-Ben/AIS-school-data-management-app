@@ -148,11 +148,12 @@
                         <li> <a class="waves-effect waves-dark" href="{{'http://127.0.0.1:8000/payments'}}" aria-expanded="false"><i
                             class="fa fa-smile-o"></i><span class="hide-menu">Payments</span></a>
                 </li>
+                <li> <a class="waves-effect waves-dark" href="{{'http://127.0.0.1:8000/results'}}" aria-expanded="false"><i
+                    class="fa fa-table"></i><span class="hide-menu">Results</span></a>
+                </li>
                         <li> <a class="waves-effect waves-dark" href="{{'http://127.0.0.1:8000/fees'}}" aria-expanded="false"><i
                                     class="fa fa-table"></i><span class="hide-menu">Fees</span></a>
                         </li>
-                        
-                       
                         <li> <a class="waves-effect waves-dark" href="{{route('register_user')}}" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Register User</span></a>
                         </li>
