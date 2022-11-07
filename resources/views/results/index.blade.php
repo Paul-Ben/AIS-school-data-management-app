@@ -13,8 +13,8 @@
                     <th>
                         <div class=" mb-2">
                             <a class="btn btn-success" href="{{route('get-student')}}"> Submit Result</a>
-                            <a class="btn btn-success" href=""> View Result</a>
-                            <a class="btn btn-success" href=""> View Class</a>
+                            <a class="btn btn-success" href="{{route('result-view')}}"> View Result</a>
+                            <a class="btn btn-success" href="{{route('search-class-result')}}"> View Class</a>
                             <a class="btn btn-success" href=""> Search Student</a>
                         </div>
                     </th>

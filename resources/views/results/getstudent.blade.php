@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left mb-2">
-                <h2>Search Student</h2>
+                <h2>Search student to submit result</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('students.index') }}"> Back</a>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="form-group">
-                    <strong>Student Registration:</strong>
+                    <strong>Student Registration Number:</strong>
                     <input type="text" name="searchData" class="form-control" placeholder="Registration Number">
                     @error('searchData')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>

@@ -34,7 +34,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
 Route::resource('students', StudentController::class);
-
 Route::resource('payments', PaymentController::class);
 Route::resource('fees', FeeController::class);
 Route::get('addPayment', [PaymentController::class, 'showStudent'])->name('addPayment');
@@ -52,6 +51,12 @@ Route::get('receipt', [RecieptController::class, 'showReciept'])->name('receipt'
 Route::resource('results', ResultController::class);
 Route::get('get-student', [ResultController::class, 'testme'])->name('get-student');
 Route::get('testsearch', [ResultController::class, 'testsearch'])->name('testsearch');
+Route::get('result-view', [ResultController::class, 'viewResultsearch'])->name('result-view');
+Route::get('result-page', [ResultController::class, 'displayResult'])->name('result-page');
+Route::get('search-class-result', [ResultController::class, 'searchclassresult'])->name('search-class-result');
+Route::get('get-class-result', [ResultController::class, 'getclassresult'])->name('get-class-result');
+Route::get('printpage', [ResultController::class, 'printresultpage'])->name('printpage');
+// Route::get('bypass', [ResultController::class, 'bypass'])->name('bypass');
 
 });
 

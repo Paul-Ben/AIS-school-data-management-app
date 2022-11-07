@@ -50,6 +50,16 @@ class ResultController extends Controller
          
     }
 
+    public function viewResultsearch()
+    {
+        return view('results.getstudentResult');
+    }
+
+    public function bypass()
+    {
+        // return view('results.result-view');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -92,9 +102,56 @@ class ResultController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Result $result)
     {
-        //
+        return view('results.result-view1', compact('result'));
+    }
+
+    public function displayResult(Request $request, Result $result)
+    {
+        $check = $result = Result::where('regNumber',$request->searchData)->where('sessionName',$request->sessionName)
+        ->where('term',$request->term)->exists();
+        
+       if ($check) {
+        $results = Result::all()->where('regNumber',$request->searchData)->where('sessionName',$request->sessionName)
+        ->where('term',$request->term)->first();
+        
+        //dd($result);
+
+        return view('results.result-view', compact('results'));
+       }
+       else {
+        return redirect()->back()->with('message', 'No Result found.');
+       }
+        
+    }
+
+    public function searchclassresult()
+    {
+        return view('results.searchclassresult');
+    }
+
+    public function getclassresult(Request $request, Result $result)
+    {
+        $check = $result = Result::where('sessionName',$request->sessionName)
+        ->where('term',$request->term)->where('sclass',$request->sclass)->exists();
+        
+        if ($check) {
+            $results = Result::all()->where('sclass',$request->sclass)->where('term', $request->term)
+            ->where('sessionName', $request->sessionName);
+            $classname = Result::where('sclass',$request->sclass)->get('sclass')->first();
+            //   dd($classname);
+            return view('results.classresultview',compact('results'), compact('classname'));
+        }else {
+            
+            return redirect()->back()->with('message', 'No results submited for this class');
+        }
+        
+    }
+
+    public function printresultpage(Request $request, Result $result)
+    {
+        return view('results.printpage', compact('result'));
     }
 
     /**
@@ -103,9 +160,9 @@ class ResultController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Result $result, Request $request)
     {
-        //
+        return view('results.edit', compact('result'));
     }
 
     /**
@@ -115,9 +172,20 @@ class ResultController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Result $result)
     {
-        //
+        $request->validate([
+
+            'regNumber' => 'required',
+            'fullName' => 'required',
+            'sessionName' => 'required',
+            'term' => 'required',
+            'sclass' => 'required'
+            
+        ]);
+
+        $result->fill($request->post())->save();
+        return redirect()->route('results.index')->with('success','Result Has Been updated successfully');
     }
 
     /**
@@ -126,8 +194,10 @@ class ResultController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Result $result)
     {
-        //
+        $result->delete();
+        return redirect()->route('results.index')->with('success','Result has been deleted successfully');
+        
     }
 }

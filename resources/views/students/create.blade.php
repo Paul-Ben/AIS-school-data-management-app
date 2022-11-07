@@ -70,7 +70,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <div class="form-group">
                         <strong>Date of Birth:</strong>
-                        <input type="text" name="dob" class="form-control" placeholder="dob">
+                        <input type="date" name="dob" class="form-control" placeholder="dob">
                         @error('dob')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
