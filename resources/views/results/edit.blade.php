@@ -40,24 +40,7 @@
                         @enderror
                     </div>
                 </div>
-                {{-- <div class="col-xs-12 col-sm-12 col-md-3">
-                    <div class="form-group">
-                        <strong>Middle Name:</strong>
-                        <input type="text" name="middleName" class="form-control" placeholder="dob" value="{{ $student->middleName}}" >
-                        @error('middleName')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-3">
-                    <div class="form-group">
-                        <strong>Student Last Name:</strong>
-                        <input type="text" name="lasttName" class="form-control" placeholder="Last Name" value="{{$student->lasttName}}">
-                        @error('lasttName')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div> --}}
+               
                 <div class="col-xs-12 col-sm-12 col-md-3">
                     <div class="form-group">
                         <strong>Session:</strong>
@@ -164,22 +147,15 @@
                                 <option value="Number Work">Number Work</option>
                             </select>
                         </td>
-                        <td><input type="text" name="subject1_1st_ca" id="ca1" size="4" maxlength="2" value="{{$result->subject1_1st_ca}}" ></td>
-                        <td><input type="text" name="subject1_2nd_ca" id="ca2" size="4" maxlength="2" value="{{$result->subject1_2nd_ca}}"></td>
-                        <td><input type="text" name="subject1_project" id="pjkt" size="4" maxlength="2" value="{{$result->subject1_project}}"></td>
-                        <td><input type="text" name="subject1_exam" id="exam" size="4" maxlength="2" value="{{$result->subject1_exam}}"></td>
-                        <td><input type="text" name="subject1_overall" id="overall" size="4" maxlength="3" value="{{$result->subject1_overall}}"></td>
-                        <td><input type="text" name="subject1_Grade" id="grade" size="4"maxlength="1" value="{{$result->subject1_Grade}}"></td>
+                        <td><input type="text" name="subject1_1st_ca" id="s1_ca1" size="4" maxlength="2" value="{{$result->subject1_1st_ca}}" ></td>
+                        <td><input type="text" name="subject1_2nd_ca" id="s1_ca2" size="4" maxlength="2" value="{{$result->subject1_2nd_ca}}"></td>
+                        <td><input type="text" name="subject1_project" id="s1_pjkt" size="4" maxlength="2" value="{{$result->subject1_project}}"></td>
+                        <td><input type="text" name="subject1_exam" id="s1_exam" size="4" maxlength="2" value="{{$result->subject1_exam}}"></td>
+                        <td><input type="text" name="subject1_overall" id="s1_overall" onfocus="calcOverall()" size="4" maxlength="3" value="{{$result->subject1_overall}}"></td>
+                        <td><input type="text" name="subject1_Grade" id="s1_grade" size="4"maxlength="1" value="{{$result->subject1_Grade}}"></td>
                         <td>
-                            <select class="" name="subject1_remarks" id="rmks">
-                                <option value="" selected>{{$result->subject1_remarks}}</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="Poor">Poor</option>
+                            <input type="text" name="subject1_remarks" id="sub1_rmks" size="9"  value="{{$result->subject1_remarks}}" required>
                             
-                            </select>
                         </td>
                         
                     </tr>
@@ -203,22 +179,15 @@
                                 <option value="Number Work">Number Work</option>
                             </select>
                         </td>
-                        <td><input type="text" name="subject2_1st_ca" id="" size="4" maxlength="2" value="{{$result->subject2_1st_ca}}"></td>
-                        <td><input type="text" name="subject2_2nd_ca" id="" size="4" maxlength="2" value="{{$result->subject2_2nd_ca}}"></td>
-                        <td><input type="text" name="subject2_project" id="" size="4" maxlength="2" value="{{$result->subject2_project}}"></td>
-                        <td><input type="text" name="subject2_exam" id="" size="4" maxlength="2" value="{{$result->subject2_exam}}"></td>
-                        <td><input type="text" name="subject2_overall" id="" size="4" maxlength="3" value="{{$result->subject2_overall}}"></td>
-                        <td><input type="text" name="subject2_Grade" id="" size="4" maxlength="1" value="{{$result->subject2_Grade}}"></td>
+                        <td><input type="text" name="subject2_1st_ca" id="s2_ca1" size="4" maxlength="2" value="{{$result->subject2_1st_ca}}"></td>
+                        <td><input type="text" name="subject2_2nd_ca" id="s2_ca2" size="4" maxlength="2" value="{{$result->subject2_2nd_ca}}"></td>
+                        <td><input type="text" name="subject2_project" id="s2_pjkt" size="4" maxlength="2" value="{{$result->subject2_project}}"></td>
+                        <td><input type="text" name="subject2_exam" id="s2_exam" size="4" maxlength="2" value="{{$result->subject2_exam}}"></td>
+                        <td><input type="text" name="subject2_overall" id="overall2" size="4" maxlength="3" onfocus="calcOverall2()" value="{{$result->subject2_overall}}"></td>
+                        <td><input type="text" name="subject2_Grade" id="s2_grade" size="4" maxlength="1" value="{{$result->subject2_Grade}}"></td>
                         <td>
-                            <select class="" name="subject2_remarks" id="">
-                                <option value="" selected>{{$result->subject2_remarks}}</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="Poor">Poor</option>
-                            
-                            </select>
+                            <input type="text" name="subject2_remarks" id="sub2_rmks" size="9" value="{{$result->subject2_remarks}}"  required>
+                           
                         </td>
                         
                     </tr>
@@ -242,22 +211,15 @@
                                 <option value="Number Work">Number Work</option>
                             </select>
                         </td>
-                        <td><input type="text" name="subject3_1st_ca" id="" size="4" maxlength="2" value="{{$result->subject3_1st_ca}}"></td>
-                        <td><input type="text" name="subject3_2nd_ca" id="" size="4" maxlength="2" value="{{$result->subject3_2nd_ca}}"></td>
-                        <td><input type="text" name="subject3_project" id="" size="4" maxlength="2" value="{{$result->subject3_project}}"></td>
-                        <td><input type="text" name="subject3_exam" id="" size="4" maxlength="2" value="{{$result->subject3_exam}}"></td>
-                        <td><input type="text" name="subject3_overall" id="" size="4" maxlength="3" value="{{$result->subject3_overall}}"></td>
-                        <td><input type="text" name="subject3_Grade" id="" size="4" maxlength="1" value="{{$result->subject3_Grade}}"></td>
+                        <td><input type="text" name="subject3_1st_ca" id="s3_ca1" size="4" maxlength="2" value="{{$result->subject3_1st_ca}}"></td>
+                        <td><input type="text" name="subject3_2nd_ca" id="s3_ca2" size="4" maxlength="2" value="{{$result->subject3_2nd_ca}}"></td>
+                        <td><input type="text" name="subject3_project" id="s3_pjkt" size="4" maxlength="2" value="{{$result->subject3_project}}"></td>
+                        <td><input type="text" name="subject3_exam" id="s3_exam" size="4" maxlength="2" value="{{$result->subject3_exam}}"></td>
+                        <td><input type="text" name="subject3_overall" id="overall3" size="4" maxlength="3" onfocus="calcOverall3()" value="{{$result->subject3_overall}}"></td>
+                        <td><input type="text" name="subject3_Grade" id="s3_grade" size="4" maxlength="1" value="{{$result->subject3_Grade}}"></td>
                         <td>
-                            <select class="" name="subject3_remarks" id="">
-                                <option value="" selected>{{$result->subject3_remarks}}</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="Poor">Poor</option>
-                            
-                            </select>
+                            <input type="text" name="subject3_remarks" id="sub3_rmks" size="9" value="{{$result->subject3_remarks}}"  required>
+                           
                         </td>
                         
                     </tr>
@@ -281,22 +243,15 @@
                                 <option value="Number Work">Number Work</option>
                             </select>
                         </td>
-                        <td><input type="text" name="subject4_1st_ca" id="" size="4" maxlength="2" value="{{$result->subject4_1st_ca}}"></td>
-                        <td><input type="text" name="subject4_2nd_ca" id="" size="4" maxlength="2" value="{{$result->subject4_2nd_ca}}"></td>
-                        <td><input type="text" name="subject4_project" id="" size="4" maxlength="2" value="{{$result->subject4_project}}"></td>
-                        <td><input type="text" name="subject4_exam" id="" size="4" maxlength="2" value="{{$result->subject4_exam}}"></td>
-                        <td><input type="text" name="subject4_overall" id="" size="4" maxlength="3" value="{{$result->subject4_overall}}"></td>
-                        <td><input type="text" name="subject4_Grade" id="" size="4" maxlength="1" value="{{$result->subject4_Grade}}"></td>
+                        <td><input type="text" name="subject4_1st_ca" id="s4_ca1" size="4" maxlength="2" value="{{$result->subject4_1st_ca}}"></td>
+                        <td><input type="text" name="subject4_2nd_ca" id="s4_ca2" size="4" maxlength="2" value="{{$result->subject4_2nd_ca}}"></td>
+                        <td><input type="text" name="subject4_project" id="s4_pjkt" size="4" maxlength="2" value="{{$result->subject4_project}}"></td>
+                        <td><input type="text" name="subject4_exam" id="s4_exam" size="4" maxlength="2" value="{{$result->subject4_exam}}"></td>
+                        <td><input type="text" name="subject4_overall" id="overall4" size="4" maxlength="3" onfocus="calcOverall4()" value="{{$result->subject4_overall}}"></td>
+                        <td><input type="text" name="subject4_Grade" id="s4_grade" size="4" maxlength="1" value="{{$result->subject4_Grade}}"></td>
                         <td>
-                            <select class="" name="subject4_remarks" id="">
-                                <option value="" selected>{{$result->subject4_remarks}}</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="Poor">Poor</option>
+                            <input type="text" name="subject4_remarks" id="sub4_rmks" size="9" value="{{$result->subject4_remarks}}"  required>
                             
-                            </select>
                         </td>
                         
                     </tr>
@@ -320,22 +275,15 @@
                                 <option value="Number Work">Number Work</option>
                             </select>
                         </td>
-                        <td><input type="text" name="subject5_1st_ca" id="" size="4" maxlength="2" value="{{$result->subject5_1st_ca}}"></td>
-                        <td><input type="text" name="subject5_2nd_ca" id="" size="4" maxlength="2" value="{{$result->subject5_2nd_ca}}"></td>
-                        <td><input type="text" name="subject5_project" id="" size="4" maxlength="2" value="{{$result->subject5_project}}"></td>
-                        <td><input type="text" name="subject5_exam" id="" size="4" maxlength="2" value="{{$result->subject5_exam}}"></td>
-                        <td><input type="text" name="subject5_overall" id="" size="4" maxlength="3" value="{{$result->subject5_overall}}"></td>
-                        <td><input type="text" name="subject5_Grade" id="" size="4" maxlength="1" value="{{$result->subject5_Grade}}"></td>
+                        <td><input type="text" name="subject5_1st_ca" id="s5_ca1" size="4" maxlength="2" value="{{$result->subject5_1st_ca}}"></td>
+                        <td><input type="text" name="subject5_2nd_ca" id="s5_ca2" size="4" maxlength="2" value="{{$result->subject5_2nd_ca}}"></td>
+                        <td><input type="text" name="subject5_project" id="s5_pjkt" size="4" maxlength="2" value="{{$result->subject5_project}}"></td>
+                        <td><input type="text" name="subject5_exam" id="s5_exam" size="4" maxlength="2" value="{{$result->subject5_exam}}"></td>
+                        <td><input type="text" name="subject5_overall" id="overall5" size="4" maxlength="3" onfocus="calcOverall5()" value="{{$result->subject5_overall}}"></td>
+                        <td><input type="text" name="subject5_Grade" id="s5_grade" size="4" maxlength="1" value="{{$result->subject5_Grade}}"></td>
                         <td>
-                            <select class="" name="subject5_remarks" id="">
-                                <option value="" selected>{{$result->subject5_remarks}}</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="Poor">Poor</option>
+                            <input type="text" name="subject5_remarks" id="sub5_rmks" size="9" value="{{$result->subject5_remarks}}"  required>
                             
-                            </select>
                         </td>
                         
                     </tr>
@@ -359,22 +307,15 @@
                                 <option value="Number Work">Number Work</option>
                             </select>
                         </td>
-                        <td><input type="text" name="subject6_1st_ca" id="" size="4" maxlength="2"  value="{{$result->subject6_1st_ca}}"></td>
-                        <td><input type="text" name="subject6_2nd_ca" id="" size="4" maxlength="2" value="{{$result->subject6_2nd_ca}}"></td>
-                        <td><input type="text" name="subject6_project" id="" size="4" maxlength="2" value="{{$result->subject6_project}}"></td>
-                        <td><input type="text" name="subject6_exam" id="" size="4" maxlength="2" value="{{$result->subject6_exam}}"></td>
-                        <td><input type="text" name="subject6_overall" id="" size="4" maxlength="3" value="{{$result->subject6_overall}}"></td>
-                        <td><input type="text" name="subject6_Grade" id="" size="4" maxlength="1" value="{{$result->subject6_Grade}}"></td>
+                        <td><input type="text" name="subject6_1st_ca" id="s6_ca1" size="4" maxlength="2"  value="{{$result->subject6_1st_ca}}"></td>
+                        <td><input type="text" name="subject6_2nd_ca" id="s6_ca2" size="4" maxlength="2" value="{{$result->subject6_2nd_ca}}"></td>
+                        <td><input type="text" name="subject6_project" id="s6_pjkt" size="4" maxlength="2" value="{{$result->subject6_project}}"></td>
+                        <td><input type="text" name="subject6_exam" id="s6_exam" size="4" maxlength="2" value="{{$result->subject6_exam}}"></td>
+                        <td><input type="text" name="subject6_overall" id="overall6" size="4" maxlength="3" onfocus="calcOverall6()" value="{{$result->subject6_overall}}"></td>
+                        <td><input type="text" name="subject6_Grade" id="s6_grade" size="4" maxlength="1" value="{{$result->subject6_Grade}}"></td>
                         <td>
-                            <select class="" name="subject6_remarks" id="">
-                                <option value="" selected>{{$result->subject6_remarks}}</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="Poor">Poor</option>
-                            
-                            </select>
+                            <input type="text" name="subject6_remarks" id="sub6_rmks" size="9" value="{{$result->subject6_remarks}}"  required>
+                           
                         </td>
                         
                     </tr>
@@ -398,22 +339,15 @@
                                 <option value="Number Work">Number Work</option>
                             </select>
                         </td>
-                        <td><input type="text" name="subject7_1st_ca" id="" size="4" maxlength="2" value="{{$result->subject7_1st_ca}}"></td>
-                        <td><input type="text" name="subject7_2nd_ca" id="" size="4" maxlength="2" value="{{$result->subject7_2nd_ca}}"></td>
-                        <td><input type="text" name="subject7_project" id="" size="4" maxlength="2" value="{{$result->subject7_project}}"></td>
-                        <td><input type="text" name="subject7_exam" id="" size="4" maxlength="2" value="{{$result->subject7_exam}}"></td>
-                        <td><input type="text" name="subject7_overall" id="" size="4" maxlength="3" value="{{$result->subject7_overall}}"></td>
-                        <td><input type="text" name="subject7_Grade" id="" size="4" maxlength="1" value="{{$result->subject7_Grade}}"></td>
+                        <td><input type="text" name="subject7_1st_ca" id="s7_ca1" size="4" maxlength="2" value="{{$result->subject7_1st_ca}}"></td>
+                        <td><input type="text" name="subject7_2nd_ca" id="s7_ca2" size="4" maxlength="2" value="{{$result->subject7_2nd_ca}}"></td>
+                        <td><input type="text" name="subject7_project" id="s7_pjkt" size="4" maxlength="2" value="{{$result->subject7_project}}"></td>
+                        <td><input type="text" name="subject7_exam" id="s7_exam" size="4" maxlength="2" value="{{$result->subject7_exam}}"></td>
+                        <td><input type="text" name="subject7_overall" id="overall7" size="4" maxlength="3" onfocus="calcOverall7()" value="{{$result->subject7_overall}}"></td>
+                        <td><input type="text" name="subject7_Grade" id="s7_grade" size="4" maxlength="1" value="{{$result->subject7_Grade}}"></td>
                         <td>
-                            <select class="" name="subject7_remarks" id="">
-                                <option value="" selected>{{$result->subject7_remarks}}</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="Poor">Poor</option>
-                            
-                            </select>
+                            <input type="text" name="subject7_remarks" id="sub7_rmks" size="9"  value="{{$result->subject7_remarks}}" required>
+                           
                         </td>
                         
                     </tr>
@@ -437,22 +371,15 @@
                                 <option value="Number Work">Number Work</option>
                             </select>
                         </td>
-                        <td><input type="text" name="subject8_1st_ca" id="" size="4" maxlength="2" value="{{$result->subject8_1st_ca}}"></td>
-                        <td><input type="text" name="subject8_2nd_ca" id="" size="4" maxlength="2" value="{{$result->subject8_2nd_ca}}"></td>
-                        <td><input type="text" name="subject8_project" id="" size="4" maxlength="2" value="{{$result->subject8_project}}"></td>
-                        <td><input type="text" name="subject8_exam" id="" size="4" maxlength="2" value="{{$result->subject8_exam}}"></td>
-                        <td><input type="text" name="subject8_overall" id="" size="4" maxlength="3" value="{{$result->subject8_overall}}"></td>
-                        <td><input type="text" name="subject8_Grade" id="" size="4" maxlength="1" value="{{$result->subject8_Grade}}"></td>
+                        <td><input type="text" name="subject8_1st_ca" id="s8_ca1" size="4" maxlength="2" value="{{$result->subject8_1st_ca}}"></td>
+                        <td><input type="text" name="subject8_2nd_ca" id="s8_ca2" size="4" maxlength="2" value="{{$result->subject8_2nd_ca}}"></td>
+                        <td><input type="text" name="subject8_project" id="s8_pjkt" size="4" maxlength="2" value="{{$result->subject8_project}}"></td>
+                        <td><input type="text" name="subject8_exam" id="s8_exam" size="4" maxlength="2" value="{{$result->subject8_exam}}"></td>
+                        <td><input type="text" name="subject8_overall" id="overall8" size="4" maxlength="3" onfocus="calcOverall8()" value="{{$result->subject8_overall}}"></td>
+                        <td><input type="text" name="subject8_Grade" id="s8_grade" size="4" maxlength="1" value="{{$result->subject8_Grade}}"></td>
                         <td>
-                            <select class="" name="subject8_remarks" id="">
-                                <option value="" selected>{{$result->subject8_remarks}}</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="Poor">Poor</option>
+                            <input type="text" name="subject8_remarks" id="sub8_rmks" size="9" value="{{$result->subject8_remarks}}"  required>
                             
-                            </select>
                         </td>
                         
                     </tr>
@@ -476,22 +403,15 @@
                                 <option value="Number Work">Number Work</option>
                             </select>
                         </td>
-                        <td><input type="text" name="subject9_1st_ca" id="" size="4" maxlength="2" value="{{$result->subject9_1st_ca}}"></td>
-                        <td><input type="text" name="subject9_2nd_ca" id="" size="4" maxlength="2" value="{{$result->subject9_2nd_ca}}"></td>
-                        <td><input type="text" name="subject9_project" id="" size="4" maxlength="2" value="{{$result->subject9_project}}"></td>
-                        <td><input type="text" name="subject9_exam" id="" size="4" maxlength="2" value="{{$result->subject9_exam}}"></td>
-                        <td><input type="text" name="subject9_overall" id="" size="4" maxlength="3" value="{{$result->subject9_overall}}"></td>
-                        <td><input type="text" name="subject9_Grade" id="" size="4" maxlength="1" value="{{$result->subject9_Grade}}"></td>
+                        <td><input type="text" name="subject9_1st_ca" id="s9_ca1" size="4" maxlength="2" value="{{$result->subject9_1st_ca}}"></td>
+                        <td><input type="text" name="subject9_2nd_ca" id="s9_ca2" size="4" maxlength="2" value="{{$result->subject9_2nd_ca}}"></td>
+                        <td><input type="text" name="subject9_project" id="s9_pjkt" size="4" maxlength="2" value="{{$result->subject9_project}}"></td>
+                        <td><input type="text" name="subject9_exam" id="s9_exam" size="4" maxlength="2" value="{{$result->subject9_exam}}"></td>
+                        <td><input type="text" name="subject9_overall" id="overall9" size="4" maxlength="3" onfocus="calcOverall9()" value="{{$result->subject9_overall}}"></td>
+                        <td><input type="text" name="subject9_Grade" id="s9_grade" size="4" maxlength="1" value="{{$result->subject9_Grade}}" ></td>
                         <td>
-                            <select class="" name="subject9_remarks" id="">
-                                <option value="" selected>{{$result->subject9_remarks}}</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Very Good">Very Good</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="Poor">Poor</option>
-                            
-                            </select>
+                            <input type="text" name="subject9_remarks" id="sub9_rmks" size="9"  value="{{$result->subject9_remarks}}" required>
+                        
                         </td>
                         
                     </tr>
@@ -545,8 +465,7 @@
             </div>
         </form>
     </div>
-    <script>
-        
-
-    </script>
+    <script src="{{asset('/assets/styles/result/results.js')}}"></script>
+   
+   
 @endsection

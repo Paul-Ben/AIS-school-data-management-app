@@ -181,13 +181,14 @@
                     
                     <tr>
                         
-                        <td><h5>Total Score:</h5> </td>
+                        <td><h5>Total Score: </h5> </td>
+                        <td><h5>{{floatval($result->subject1_overall)+floatval($result->subject2_overall)+floatval($result->subject3_overall)+floatval($result->subject4_overall)+floatval($result->subject5_overall)+floatval($result->subject6_overall)+floatval($result->subject7_overall)+floatval($result->subject8_overall)+floatval($result->subject9_overall)}}<h5></td>
                         <td></td>
-                        <td></td>
-                        <td colspan="2"><h5>Out of:</h5> </td>
+                        <td colspan="2"><h5>Out of: 900</h5> </td>
                         {{-- <td></td> --}}
-                        <td></td>
-                        <td colspan="2"><h5>Average:</h5></td>
+                        <td ><h5>Average: </h5></td>
+                        <td colspan="2"><h5>{{ round((floatval($result->subject1_overall)+floatval($result->subject2_overall)+floatval($result->subject3_overall)+floatval($result->subject4_overall)+floatval($result->subject5_overall)+floatval($result->subject6_overall)+floatval($result->subject7_overall)+floatval($result->subject8_overall)+floatval($result->subject9_overall))/9,2)}}</h5></td>
+                        
                         
                     </tr>
                     <tr>

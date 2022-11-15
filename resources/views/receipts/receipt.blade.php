@@ -97,44 +97,14 @@
                             <div class="col-9 col-sm-5">
                                 {{ $payment->sessionName }} | {{ $payment->sclass }} , School fee.
                             </div>
-                            <div class="d-none d-sm-block col-2">First</div>
+                            <div class="d-none d-sm-block col-2">{{ $payment->term_fee }}</div>
                             <div class="d-none d-sm-block col-2 text-95">
-                                {{ $payment->first_term_fee }}
+                                {{ $payment->fee_status }}
                             </div>
-                            <div class="col-2 text-secondary-d2">{{ $payment->firstAmount }}</div>
+                            <div class="col-2 text-secondary-d2">{{ $payment->Amount_paid }}</div>
                         </div>
 
-                        <div class="row mb-2 mb-sm-0 py-25 bgc-default-l4">
-                            <div class="d-none d-sm-block col-1">2</div>
-                            <div class="col-9 col-sm-5">
-                                {{ $payment->sessionName }} | {{ $payment->sclass }} , School fee.
-                            </div>
-                            <div class="d-none d-sm-block col-2">Second</div>
-                            <div class="d-none d-sm-block col-2 text-95">
-                                {{ $payment->second_term_fee }}
-                            </div>
-                            <div class="col-2 text-secondary-d2">{{ $payment->secondAmount }}</div>
-                        </div>
-
-                        <div class="row mb-2 mb-sm-0 py-25">
-                            <div class="d-none d-sm-block col-1">3</div>
-                            <div class="col-9 col-sm-5">
-                                {{ $payment->sessionName }} | {{ $payment->sclass }} , School fee.
-                            </div>
-                            <div class="d-none d-sm-block col-2">Third</div>
-                            <div class="d-none d-sm-block col-2 text-95">
-                                {{ $payment->third_term_fee }}
-                            </div>
-                            <div class="col-2 text-secondary-d2">{{ $payment->thirdAmount }}</div>
-                        </div>
-
-                        {{-- <div class="row mb-2 mb-sm-0 py-25 bgc-default-l4">
-                            <div class="d-none d-sm-block col-1">4</div>
-                            <div class="col-9 col-sm-5">Consulting</div>
-                            <div class="d-none d-sm-block col-2">1 Year</div>
-                            <div class="d-none d-sm-block col-2 text-95">$500</div>
-                            <div class="col-2 text-secondary-d2">$500</div>
-                        </div> --}}
+                     
                     </div>
 
                     <div class="row border-b-2 brc-default-l2"></div>
@@ -178,7 +148,7 @@
                                     SubTotal NGN
                                 </div>
                                 <div class="col-5">
-                                    <span class="text-120 text-secondary-d1"> {{ floatVal($payment->firstAmount)+floatVal($payment->secondAmount)+floatVal($payment->thirdAmount) }}</span>
+                                    <span class="text-120 text-secondary-d1"> {{ floatVal($payment->Amount_paid) }}</span>
                                 </div>
                             </div>
 
@@ -196,7 +166,7 @@
                                     Total NGN 
                                 </div>
                                 <div class="col-5">
-                                    <span class="text-150 text-success-d3 opacity-2">{{ floatVal($payment->firstAmount)+floatVal($payment->secondAmount)+floatVal($payment->thirdAmount) }}</span>
+                                    <span class="text-150 text-success-d3 opacity-2">{{ floatVal($payment->Amount_paid) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -205,8 +175,8 @@
                     <hr />
 
                     <div>
-                        <span class="text-secondary-d1 text-105">Thank you for your business</span>
-                        {{-- <a href="{{route('dashboard')}}" class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0">Go to Dashboard</a> --}}
+                        <span class="text-secondary-d1 text-105">Thank you.</span>
+                       
                     </div>
                 </div>
             </div>

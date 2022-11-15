@@ -206,7 +206,7 @@
                     <hr>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 pt-3 border pt-3">
-                    <h5>Total Score:__________</h5> 
+                    <h5>Total Score:{{floatval($result->subject1_overall)+floatval($result->subject2_overall)+floatval($result->subject3_overall)+floatval($result->subject4_overall)+floatval($result->subject5_overall)+floatval($result->subject6_overall)+floatval($result->subject7_overall)+floatval($result->subject8_overall)+floatval($result->subject9_overall)}}</h5> 
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 pt-3 border">
                     <h5>Out of:____________</h5> 

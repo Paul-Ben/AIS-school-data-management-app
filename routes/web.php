@@ -33,21 +33,34 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
+    // Routes for student operations
 Route::resource('students', StudentController::class);
-Route::resource('payments', PaymentController::class);
-Route::resource('fees', FeeController::class);
-Route::get('addPayment', [PaymentController::class, 'showStudent'])->name('addPayment');
 Route::get('search', [StudentController::class, 'searchStudent'])->name('search');
 Route::get('view', [StudentController::class, 'showStudent'])->name('view');
 Route::get('view-students', [StudentController::class, 'viewStudent'])->name('view-students');
 Route::get('search-class', [StudentController::class, 'searchClass'])->name('search-class');
 Route::get('view-class', [StudentController::class, 'viewClass'])->name('view-class');
+
+// Routes for payment operations
+Route::resource('payments', PaymentController::class);
+Route::get('addPayment', [PaymentController::class, 'showStudent'])->name('addPayment');
+Route::get('all_payments', [PaymentController::class, 'all_payments'])->name('all_payments');
+Route::get('class_payments_index', [PaymentController::class, 'class_payments_index'])->name('class_payments_index');
+Route::get('class_payments', [PaymentController::class, 'class_payments'])->name('class_payments');
+
+Route::resource('fees', FeeController::class);
+
+
 Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 Route::get('inregister', [RegisteredUserController::class, 'icreate'])->name('register_user');
 Route::post('register-user', [RegisteredUserController::class, 'istore'])->name('register-user');
+
+//Routes for receipt operations
+
 Route::resource('receipts', RecieptController::class);
 Route::get('receipt', [RecieptController::class, 'showReciept'])->name('receipt');
 
+// Routes for results operations
 Route::resource('results', ResultController::class);
 Route::get('get-student', [ResultController::class, 'testme'])->name('get-student');
 Route::get('testsearch', [ResultController::class, 'testsearch'])->name('testsearch');
@@ -56,6 +69,7 @@ Route::get('result-page', [ResultController::class, 'displayResult'])->name('res
 Route::get('search-class-result', [ResultController::class, 'searchclassresult'])->name('search-class-result');
 Route::get('get-class-result', [ResultController::class, 'getclassresult'])->name('get-class-result');
 Route::get('printpage', [ResultController::class, 'printresultpage'])->name('printpage');
+
 // Route::get('bypass', [ResultController::class, 'bypass'])->name('bypass');
 
 });

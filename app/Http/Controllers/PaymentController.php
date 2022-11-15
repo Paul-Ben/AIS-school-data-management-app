@@ -74,13 +74,14 @@ class PaymentController extends Controller
     
         $new_reg = Pay::where('regNumber', $request->regNumber)->exists();
         $new_session = Pay::where('sessionName', $request->sessionName)->exists();
+        $new_term = Pay::where('term_fee', $request->term_fee)->exists();
 
 
         if (!$new_reg ) {
             # code...
             Pay::create($request->post());
             
-        }elseif ($new_reg && $new_session ) {
+        }elseif ($new_reg && $new_session && $new_term) {
             # code...
             Session::flash('message', 'Payment record for '.$request->regNumber. ' exists, search and update the payment or change the session');
                 return redirect()->back();
@@ -119,6 +120,26 @@ class PaymentController extends Controller
         $fees = Fees::all();
         
         return view('receipts.receipt', compact('payment'), compact('fees'));
+    }
+
+    public function all_payments(Pay $payment)
+    {
+        $payments = Pay::orderBy('id','desc')->paginate(10);
+
+        return view('payments.all_payments', compact('payments'));
+    }
+
+    public function class_payments_index()
+    {
+        return view('payments.class_payments_index');
+    }
+
+    public function class_payments(Pay $payment, Request $request)
+    {
+        $payments = Pay::where('sclass', $request->sclass)->where('sessionName', $request->sessionName)
+            ->where('term_fee', $request->term_fee)->orderBy('regNumber', 'asc')->paginate(10);
+            // dd('payments');
+        return view('payments.class_payments', compact('payments'));
     }
 
     /**

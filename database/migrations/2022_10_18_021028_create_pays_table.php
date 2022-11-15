@@ -20,12 +20,9 @@ return new class extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->string('sclass');
-            $table->string('first_term_fee');
-            $table->string('second_term_fee');
-            $table->string('third_term_fee');
-            $table->string('firstAmount');
-            $table->string('secondAmount');
-            $table->string('thirdAmount');
+            $table->string('term_fee');
+            $table->string('Amount_paid');
+            $table->string('fee_status');
             $table->timestamps();
         });
     }

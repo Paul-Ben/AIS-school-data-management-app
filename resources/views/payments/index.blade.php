@@ -6,9 +6,7 @@
                 <div class="pull-left mb-2">
                     <h2>Search Student Payment</h2>
                 </div>
-                <div class="pull-right">
-                    {{-- <a class="btn btn-primary" href="{{ route('students.index') }}"> Back</a> --}}
-                </div>
+               
             </div>
         </div>
         @if(session('status'))
@@ -39,6 +37,7 @@
                 
             
         </form>
+        
     </div>
 
     <div class="container mt-2">
@@ -49,6 +48,8 @@
                 </div>
                 <div class="pull-right mb-2">
                     <a class="btn btn-success" href="{{ route('payments.create') }}"> Add Student Payment</a>
+                    <a class="btn btn-success" href="{{route('all_payments')}}">View All Payments</a>
+                    <a class="btn btn-success" href="{{route('class_payments_index')}}">View Class Payments</a>
                 </div>
             </div>
         </div>
@@ -57,42 +58,7 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    {{-- <th>S.No</th> --}}
-                    <th>Reg Number</th>
-                    <th>Session</th>
-                    <th>Student Class</th>
-                    <th>First Term</th>
-                    <th>Second Term</th>
-                    <th>Third Term</th>
-                    <th width="280px">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($payments as $payment)
-                    <tr>
-                        {{-- <td>{{ $payment->id }}</td> --}}
-                        <td>{{ $payment->regNumber }}</td>
-                        <td>{{ $payment->sessionName }}</td>
-                        <td>{{ $payment->sclass }}</td>
-                        <td>{{ $payment->first_term_fee }}</td>
-                        <td>{{ $payment->second_term_fee }}</td>
-                        <td>{{ $payment->third_term_fee }}</td>
-                        <td>
-                            <form action="{{ route('payments.destroy', $payment->id) }}" method="Post">
-                                <a class="btn btn-primary" href="{{ route('payments.edit', $payment->id) }}">Edit</a>
-                                <a class="btn btn-primary" href="{{ route('payments.show', $payment->id) }}">Print</a>
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-            </tbody>
-        </table>
-        {!! $payments->links() !!}
+        
+        
     </div>
     @endsection

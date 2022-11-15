@@ -21,12 +21,12 @@
                 <tr>
                     <th>Session</th>
                     <th>Reg Number</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Full Name</th>
+                    
                     <th>Class</th>
-                    <th>First Term Fee Status</th>
-                    <th>Second Term Fee Status</th>
-                    <th>Third Term Fee Status</th>
+                    <th>Fees Paid</th>
+                    <th>Ammount</th>
+                    <th>Status</th>
                     {{-- <th width="280px">Action</th> --}}
                 </tr>
             </thead>
@@ -35,21 +35,22 @@
                     <tr>
                         <td>{{ $payment->sessionName }}</td>
                         <td>{{ $payment->regNumber }}</td>
-                        <td>{{ $payment->firstName }}</td>
-                        <td>{{ $payment->lastName }}</td>
+                        <td>{{ $payment->firstName }} {{ $payment->lastName }}</td>
+                        
                         <td>{{ $payment->sclass }}</td>
-                        <td>{{ $payment->first_term_fee }}</td>
-                        <td>{{ $payment->second_term_fee }}</td>
-                        <td>{{ $payment->third_term_fee }}</td>
+                        <td>{{ $payment->term_fee }}</td>
+                        <td>{{ $payment->Amount_paid }}</td>
+                        <td>{{ $payment->fee_status }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('payments.show', $payment->id) }}">Print</a>
-                            {{-- <form action="{{ route('payments.destroy',$payment->id) }}" method="Post">
+                            
+                            <form action="{{ route('payments.destroy',$payment->id) }}" method="Post">
+                                <a class="btn btn-primary" href="{{ route('payments.show', $payment->id) }}">Print</a>
                                 <a class="btn btn-primary" href="{{ route('payments.edit',$payment->id) }}">Edit</a>
 
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
-                            </form> --}}
+                            </form>
                         </td>
                     </tr>
                     @endforeach

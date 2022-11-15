@@ -63,80 +63,48 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <strong>Term Fee:</strong>
+                            <select class="form-control" name="term_fee" aria-label="Default select example">
+                                <option selected>{{$payment->term_fee}}</option>
+                                <option value="First Term">First Term</option>
+                                <option value="Second Term">Second Term</option>
+                                <option value="Third Term">Third Term</option>
+                                
+                                </select>
+                            @error('term_fee')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
+                            
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <strong>Amount:</strong>
+                            <input type="text" name="Amount_paid" class="form-control" value="{{$payment->Amount_paid}}" placeholder="Amount paid">
+                            @error('Amount_paid')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <strong>Term Fee Status:</strong>
+                            <select class="form-control" name="fee_status" aria-label="Default select example">
+                                <option selected>{{$payment->fee_status}}</option>
+                                <option value="Paid">Paid</option>
+                                <option value="Unpaid">Unpaid</option>
+                                <option value="Part Payment">Part Payment</option>
+                                
+                                </select>
+                            @error('fee_status')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
+                            
+                        </div>
+                    </div>
         
-                    
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="form-group">
-                            <strong>First Term Fee Status:</strong>
-                            <select class="form-control" name="first_term_fee" aria-label="Default select example">
-                                <option selected>{{ $payment->first_term_fee }}</option>
-                                <option value="Paid">Paid</option>
-                                <option value="Unpaid">Unpaid</option>
-                                <option value="Part Payment">Part Payment</option>
-                                
-                                </select>
-                            @error('first_term_fee')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="form-group">
-                            <strong>Amount:</strong>
-                            <input type="text" name="firstAmount" class="form-control" placeholder="Amount paid for 1st Term" value="{{ $payment->firstAmount }}">
-                            @error('firstAmount')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="form-group">
-                            <strong>Second Term Fee Status:</strong>
-                            <select class="form-control" name="second_term_fee" aria-label="Default select example">
-                                <option selected>{{ $payment->second_term_fee }}</option>
-                                <option value="Paid">Paid</option>
-                                <option value="Unpaid">Unpaid</option>
-                                <option value="Part Payment">Part Payment</option>
-                                
-                                </select>
-                            @error('second_term_fee')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="form-group">
-                            <strong>Amount:</strong>
-                            <input type="text" name="secondAmount" class="form-control" placeholder="Amount paid for 2nd Term" value="{{ $payment->secondAmount }}">
-                            @error('secondAmount')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="form-group">
-                            <strong>Third Term Fee Status:</strong>
-                            <select class="form-control" name="third_term_fee" aria-label="Default select example">
-                                <option selected>{{ $payment->third_term_fee }}</option>
-                                <option value="Paid">Paid</option>
-                                <option value="Unpaid">Unpaid</option>
-                                <option value="Part Payment">Part Payment</option>
-                                
-                                </select>
-                            @error('third_term_fee')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="form-group">
-                            <strong>Amount:</strong>
-                            <input type="text" name="thirdAmount" class="form-control" placeholder="Amount paid for 3rd Term" value="{{ $payment->thirdAmount }}">
-                            @error('thirdAmount')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
                     <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="form-group">
                             <strong>Student Class:</strong>

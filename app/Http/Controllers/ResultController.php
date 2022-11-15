@@ -78,15 +78,15 @@ class ResultController extends Controller
             
         ]);
 
-        $checkReg = Result::where('regNumber', $request->regNumber)->exists();
-        $checkSession = Result::where('sessionName', $request->sessionName)->exists();
-        $checkTerm = Result::where('term', $request->term)->exists();
+        $checkReg = Result::where('regNumber', $request->regNumber)
+        ->where('sessionName', $request->sessionName)->where('term', $request->term)->exists();
+       
 
-        if ($checkReg  && $checkSession && $checkTerm) {
+        if ($checkReg) {
 
             Session::flash('message', 'Result for this Student for the entered session and term exists. Edit or change the session');
             return redirect()->back();
-           // Result::create($request->post());
+           
 
             
         }else{
