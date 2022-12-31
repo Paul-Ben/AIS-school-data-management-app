@@ -1,3 +1,16 @@
+<html>
+    <head>
+       
+          <title>Alven International School</title>
+
+    </head>
+    <body>
+        
+    </body>
+
+
+  </html>
+  <!-- Section: Design Block -->
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">

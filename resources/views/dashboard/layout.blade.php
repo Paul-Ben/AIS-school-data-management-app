@@ -6,11 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, AdminWrap lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, AdminWrap lite design, AdminWrap lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="AdminWrap Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
+   
     <title>Alven International School Dashboard</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminwrap-lite/" />
     <!-- Favicon icon -->
@@ -109,18 +105,8 @@
                                 <span class="hidden-md-down">{{ Auth::user()->name }} &nbsp;</span> </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                   
-                                    <a href="{{route('logout')}}">Logout</a>
-                                   
-                                    
-                                    
-                                    
+                                    <a href="{{route('logout')}}">Logout</a> 
                                 </li>
-                                
-        
-                                   
-                                
-
                             </ul>
                         </li>
                     </ul>
@@ -139,25 +125,51 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="{{'http://127.0.0.1:8000/dashboard'}}" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{url('/dashboard')}}" aria-expanded="false"><i
                                     class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="{{'http://127.0.0.1:8000/students'}}" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="" aria-expanded="true"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Students</span></a>
+                                    <ul>
+                                        <li><a href="{{ route('students.create') }}">Add Student</a></li>
+                                        <li><a href="{{ route('search') }}">Search Student</a></li>
+                                        <li><a href="{{ route('search-class') }}"> Class Students</a></li>
+                                        <li><a href="{{ route('view-students') }}">View All Students</a></li>
+                                        <li><a href="{{url('/students')}}" > Students Registered</a></li>
+                                    </ul>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="{{'http://127.0.0.1:8000/payments'}}" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="" aria-expanded="false"><i
                             class="fa fa-smile-o"></i><span class="hide-menu">Payments</span></a>
-                </li>
-                <li> <a class="waves-effect waves-dark" href="{{'http://127.0.0.1:8000/results'}}" aria-expanded="false"><i
-                    class="fa fa-table"></i><span class="hide-menu">Results</span></a>
-                </li>
-                        <li> <a class="waves-effect waves-dark" href="{{'http://127.0.0.1:8000/fees'}}" aria-expanded="false"><i
-                                    class="fa fa-table"></i><span class="hide-menu">Fees</span></a>
+                            <ul>
+                               
+                                <li><a href="{{ route('payments.create') }}">Add Student payment</a></li>
+                                <li><a href="{{url('/payments')}}">Search payment</a></li>
+                                <li><a href="{{route('class_payments_index')}}">View class payments</a></li>
+                                <li><a href="{{route('all_payments')}}">View all payments</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="{{url('/results')}}" aria-expanded="false"><i
+                            class="fa fa-table"></i><span class="hide-menu">Results</span></a>
+                            <ul>
+                                <li><a href="{{url('/results')}}">Submit Result</a></li>
+                                <li><a href="{{route('result-view')}}">View Result</a></li>
+                                <li><a href="{{route('search-class-result')}}">Class Result</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="" aria-expanded="false"><i
+                            class="fa fa-book"></i><span class="hide-menu">Subjects</span></a>
+                            <ul>
+                                <li><a href="{{route('subjects.create')}}">Add Subject</a></li>
+                                <li><a href="{{route('subjects.index')}}">View Subject</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="{{url('/fees')}}" aria-expanded="false"><i
+                                    class="fa fa-money"></i><span class="hide-menu">Fees</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="{{route('register_user')}}" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Register User</span></a>
-                        </li>
-                        
+                        </li>             
                     </ul>
                     <div class="text-center mt-4">
                         <a href=" {{'dashboard'}}"
@@ -214,78 +226,7 @@
                 <!-- Right sidebar -->
                 <!-- ============================================================== -->
                 <!-- .right-sidebar -->
-                <div class="right-sidebar">
-                    <div class="slimscrollright">
-                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span>
-                        </div>
-                        <div class="r-panel-body">
-                            <ul id="themecolors" class="mt-3">
-                                <li><b>With Light sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                                <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                                <li class="d-block mt-4"><b>With Dark sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default-dark"
-                                        class="default-dark-theme working">7</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a>
-                                </li>
-                                <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a>
-                                </li>
-                                <li><a href="javascript:void(0)" data-theme="purple-dark"
-                                        class="purple-dark-theme">11</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna-dark"
-                                        class="megna-dark-theme ">12</a></li>
-                            </ul>
-                            <ul class="mt-3 chatonline">
-                                <li><b>Chat option</b></li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img"
-                                            class="img-circle"> <span>Varun Dhavan <small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img"
-                                            class="img-circle"> <span>Genelia Deshmukh <small
-                                                class="text-warning">Away</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img"
-                                            class="img-circle"> <span>Ritesh Deshmukh <small
-                                                class="text-danger">Busy</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img"
-                                            class="img-circle"> <span>Arijit Sinh <small
-                                                class="text-muted">Offline</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img"
-                                            class="img-circle"> <span>Govinda Star <small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img"
-                                            class="img-circle"> <span>John Abraham<small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img"
-                                            class="img-circle"> <span>Hritik Roshan<small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img"
-                                            class="img-circle"> <span>Pwandeep rajan <small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- ============================================================== -->
                 <!-- End Right sidebar -->
                 <!-- ============================================================== -->

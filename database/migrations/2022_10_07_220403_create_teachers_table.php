@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('staffId');
             $table->string('firstName');
             $table->string('lastName');
+            $table->string('phone');
+            $table->string('address')->nullable();
             $table->timestamps();
         });
     }

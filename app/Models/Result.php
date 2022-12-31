@@ -24,9 +24,7 @@ class Result extends Model
             'subject6_exam', 'subject6_overall', 'subject6_Grade', 'subject6_remarks',
             'subject7', 'subject7_1st_ca', 'subject7_2nd_ca', 'subject7_project',
             'subject7_exam', 'subject7_overall', 'subject7_Grade', 'subject7_remarks',
-            'subject8', 'subject8_1st_ca', 'subject8_2nd_ca', 'subject8_project',
-            'subject8_exam', 'subject8_overall', 'subject8_Grade', 'subject8_remarks',
-            'subject9', 'subject9_1st_ca', 'subject9_2nd_ca', 'subject9_project',
-            'subject9_exam', 'subject9_overall', 'subject9_Grade', 'subject9_remarks',
-        'tComment', 'htComment'];
+            'reading', 'handwriting', 'punctuality', 'neatness','mental_ability','cooperation_with_others',
+            'attentiveness', 'speak_out', 'memory_work', 'attitude_to_schoolwork', 'response_to_homework',
+            'sports', 'no_of_school_days', 'no_days_absent', 'tComment', 'htComment'];
 }

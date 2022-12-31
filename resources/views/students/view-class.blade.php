@@ -21,6 +21,7 @@
             <h2>List of All {{ $sclasss->sclass }} Students</h2>
             
         </div>
+        
         <table class="table table-bordered">
             <thead>
                 <tr>

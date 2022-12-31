@@ -92,20 +92,6 @@ class PaymentController extends Controller
 
 
 
-        // if ($new_reg) {
-
-        //     if($new_session){
-
-        //         Session::flash('message', 'Payment record for '.$request->regNumber. ' exists, search and update the payment or change the session');
-        //         return redirect()->back();
-        //     }elseif (condition) {
-        //         # code...
-        //     }
-
-        // }else{
-        //     Pay::create($request->post());
-        // }
-
         return redirect()->route('payments.index')->with('success','Payment has been created successfully.');
     }
 
@@ -137,7 +123,7 @@ class PaymentController extends Controller
     public function class_payments(Pay $payment, Request $request)
     {
         $payments = Pay::where('sclass', $request->sclass)->where('sessionName', $request->sessionName)
-            ->where('term_fee', $request->term_fee)->orderBy('regNumber', 'asc')->paginate(10);
+            ->where('term_fee', $request->term_fee)->orderBy('regNumber', 'desc')->paginate(10);
             // dd('payments');
         return view('payments.class_payments', compact('payments'));
     }

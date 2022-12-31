@@ -169,6 +169,24 @@ class StudentController extends Controller
         return redirect()->route('students.index')->with('success','student Has Been updated successfully');
     }
 
+    public function promoteStudent()
+    {
+        return view('students.promoteStudents');
+    }
+
+    public function promote(Request $request, Student $student)
+    {
+        //$currentClass = Student::all('sclass')->where('sclass', $request->currentClass);
+        //Student::insert('sclass', $request->nextClass);
+        $newClass = $request->nextClass;
+        //dd($newClass);
+        
+        $student->fill($request->post($newClass))->where('sclass', $request->currentClass)->save();
+       
+
+        return redirect->back()->with('message', 'Students Promoted Successfuly');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

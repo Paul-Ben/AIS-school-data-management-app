@@ -35,6 +35,7 @@
                             <option value="Grade 4">Grade 4</option>
                             <option value="Grade 5">Grade 5</option>
                             <option value="Grade 6">Grade 6</option>
+                            <option value="Graduated">Graduated</option>
                             </select>
 
                         @error('searchData')

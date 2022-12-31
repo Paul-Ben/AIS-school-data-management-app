@@ -11,9 +11,9 @@
             </div>
         </div>
     </div>
-    @if(session('status'))
+    @if(session('success'))
     <div class="alert alert-success mb-1 mt-1">
-        {{ session('status') }}
+        {{ session('success') }}
     </div>
     @endif
     <form action="{{route('get-class-result')}}" method="GET" enctype="multipart/form-data">

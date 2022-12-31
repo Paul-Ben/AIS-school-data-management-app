@@ -7,7 +7,7 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
-        <table class="table table-bordered">
+        {{-- <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>
@@ -27,7 +27,7 @@
                 </tr>
             </thead>
            
-        </table>
+        </table> --}}
         <div class="card bg-warning rounded p-3 m-1 col-md-3">
             <h1 style="text-align: center; color:white ">
                 {{$students->count()}}

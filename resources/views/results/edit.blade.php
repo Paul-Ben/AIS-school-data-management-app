@@ -351,70 +351,7 @@
                         </td>
                         
                     </tr>
-                    <tr>
-                        <td>
-                            <select class="" name="subject8" id="">
-                                <option value="" selected>{{$result->subject8}}</option>
-                                <option value="Mathematics">Mathematics</option>
-                                <option value="English/Phonics">English/Phonics</option>
-                                <option value="Health Science">Health Science</option>
-                                <option value="Bible Knowledge">Bible Knowledge</option>
-                                <option value="Social Studies">Social Studies</option>
-                                <option value="Home Economics">Home Economics</option>
-                                <option value="French">French</option>
-                                <option value="Agricultural Science">Agricultural Science</option>
-                                <option value="Civic Education">Civic Education</option>
-                                <option value="Computer Science">Computer Science</option>
-                                <option value="Creative Arts">Creative Arts</option>
-                                <option value="Hand Writing">Hand Writing</option>
-                                <option value="Letter Work">Letter Work</option>
-                                <option value="Number Work">Number Work</option>
-                            </select>
-                        </td>
-                        <td><input type="text" name="subject8_1st_ca" id="s8_ca1" size="4" maxlength="2" value="{{$result->subject8_1st_ca}}"></td>
-                        <td><input type="text" name="subject8_2nd_ca" id="s8_ca2" size="4" maxlength="2" value="{{$result->subject8_2nd_ca}}"></td>
-                        <td><input type="text" name="subject8_project" id="s8_pjkt" size="4" maxlength="2" value="{{$result->subject8_project}}"></td>
-                        <td><input type="text" name="subject8_exam" id="s8_exam" size="4" maxlength="2" value="{{$result->subject8_exam}}"></td>
-                        <td><input type="text" name="subject8_overall" id="overall8" size="4" maxlength="3" onfocus="calcOverall8()" value="{{$result->subject8_overall}}"></td>
-                        <td><input type="text" name="subject8_Grade" id="s8_grade" size="4" maxlength="1" value="{{$result->subject8_Grade}}"></td>
-                        <td>
-                            <input type="text" name="subject8_remarks" id="sub8_rmks" size="9" value="{{$result->subject8_remarks}}"  required>
-                            
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <td>
-                            <select class="" name="subject9" id="">
-                                <option value="" selected>{{$result->subject9}}</option>
-                                <option value="Mathematics">Mathematics</option>
-                                <option value="English/Phonics">English/Phonics</option>
-                                <option value="Health Science">Health Science</option>
-                                <option value="Bible Knowledge">Bible Knowledge</option>
-                                <option value="Social Studies">Social Studies</option>
-                                <option value="Home Economics">Home Economics</option>
-                                <option value="French">French</option>
-                                <option value="Agricultural Science">Agricultural Science</option>
-                                <option value="Civic Education">Civic Education</option>
-                                <option value="Computer Science">Computer Science</option>
-                                <option value="Creative Arts">Creative Arts</option>
-                                <option value="Hand Writing">Hand Writing</option>
-                                <option value="Letter Work">Letter Work</option>
-                                <option value="Number Work">Number Work</option>
-                            </select>
-                        </td>
-                        <td><input type="text" name="subject9_1st_ca" id="s9_ca1" size="4" maxlength="2" value="{{$result->subject9_1st_ca}}"></td>
-                        <td><input type="text" name="subject9_2nd_ca" id="s9_ca2" size="4" maxlength="2" value="{{$result->subject9_2nd_ca}}"></td>
-                        <td><input type="text" name="subject9_project" id="s9_pjkt" size="4" maxlength="2" value="{{$result->subject9_project}}"></td>
-                        <td><input type="text" name="subject9_exam" id="s9_exam" size="4" maxlength="2" value="{{$result->subject9_exam}}"></td>
-                        <td><input type="text" name="subject9_overall" id="overall9" size="4" maxlength="3" onfocus="calcOverall9()" value="{{$result->subject9_overall}}"></td>
-                        <td><input type="text" name="subject9_Grade" id="s9_grade" size="4" maxlength="1" value="{{$result->subject9_Grade}}" ></td>
-                        <td>
-                            <input type="text" name="subject9_remarks" id="sub9_rmks" size="9"  value="{{$result->subject9_remarks}}" required>
-                        
-                        </td>
-                        
-                    </tr>
+                  
                 </table>
                 <div>
                     <hr>

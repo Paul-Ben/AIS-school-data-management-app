@@ -31,7 +31,7 @@
                     @endif
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-3">
+            <div class="col-xs-12 col-sm-12 col-md-2">
                 <div class="form-group">
                     <strong>Session:</strong>
                     <input type="text" name="sessionName" class="form-control" placeholder="Session">
@@ -44,6 +44,31 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="form-group">
+                    <strong>Choose Class:</strong>
+                    <select class="form-control" name="sclass" aria-label="Default select example">
+                        <option selected>Choose a class</option>
+                        <option value="Pre-School">Pre-School</option>
+                        <option value="KG 1">KG 1</option>
+                        <option value="KG 2">KG 2</option>
+                        <option value="KG 3">KG 3</option>
+                        <option value="Grade 1">Grade 1</option>
+                        <option value="Grade 2">Grade 2</option>
+                        <option value="Grade 3">Grade 3</option>
+                        <option value="Grade 4">Grade 4</option>
+                        <option value="Grade 5">Grade 5</option>
+                        <option value="Grade 6">Grade 6</option>
+                        </select>
+
+                    @error('sclass')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                    @if (Session::has('message'))
+                        <div class="alert alert-info">{{ Session::get('message') }}</div>
+                    @endif
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
                 <div class="form-group">
                     <strong>Term:</strong>
                     <select class="form-control" name="term" aria-label="Default select example">
